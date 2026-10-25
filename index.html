@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no">
+<meta name="theme-color" content="#ffffff">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="AiPaper">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<link rel="stylesheet" href="styles.css">
+<title>AiPaper</title>
+</head>
+<body>
+<div id="app">
+
+  <!-- ===== CALENDARIO ===== -->
+  <section class="cal">
+    <div class="cal-top">
+      <div class="cal-top-left">
+        <button class="ic" data-act="menu" title="Menu">&#9776;</button>
+        <button class="ic" data-act="view-month" title="Mese">&#128197;</button>
+        <button class="ic" data-act="view-week" title="Settimana">&#128467;</button>
+        <button class="ic" data-act="view-day" title="Giorno">&#128466;</button>
+      </div>
+      <div class="cal-top-mid">
+        <button class="nav" id="prevMonth" aria-label="Mese precedente">&lsaquo;</button>
+        <span class="month" id="monthLabel">Oct</span>
+        <button class="nav" id="nextMonth" aria-label="Mese successivo">&rsaquo;</button>
+        <span class="year" id="yearLabel">2026</span>
+      </div>
+      <div class="cal-top-right">
+        <button class="ic" data-act="today" title="Oggi">&#128197;</button>
+        <button class="ic" data-act="grid" title="Griglia">&#9638;</button>
+        <button class="ic" data-act="refresh" title="Aggiorna">&#8635;</button>
+      </div>
+    </div>
+
+    <div class="cal-grid">
+      <div class="dow">Mon</div><div class="dow">Tues</div><div class="dow">Wed</div>
+      <div class="dow">Thurs</div><div class="dow">Fri</div><div class="dow">Sat</div><div class="dow">Sun</div>
+      <div id="cells" class="cells"></div>
+    </div>
+
+    <div class="cal-side">
+      <div class="side-icons">
+        <button class="ic" data-act="sync" title="Sync">&#8635;</button>
+        <button class="ic" data-act="timeline" title="Timeline">&#9636;</button>
+        <button class="ic" data-act="add-event" title="Aggiungi evento">&#43;</button>
+        <button class="ic" data-act="settings" title="Impostazioni">&#9881;</button>
+      </div>
+      <div class="side-body" id="dayEvents">
+        <div class="no-event">
+          <div class="no-event-ic">&#128197;</div>
+          <div>Nessun evento</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PANNELLO LISTE ===== -->
+  <section class="panel">
+    <div class="panel-tabs">
+      <button class="tab active" data-tab="todo">To-Do</button>
+      <button class="tab" data-tab="tasks">Tasks</button>
+      <button class="tab" data-tab="notes">Notes</button>
+      <button class="tab" data-tab="logs">Logs</button>
+      <button class="add-item ic" id="addItem" title="Aggiungi">&#8853;</button>
+    </div>
+
+    <div class="panel-body">
+      <ul class="list" id="list"></ul>
+    </div>
+
+    <div class="panel-foot">
+      <span class="quote" id="quote">Love is all of life; all actions find their resource in love.</span>
+      <span class="pager"><button class="nav" disabled>&lsaquo;</button> 1 / 1 <button class="nav" disabled>&rsaquo;</button></span>
+    </div>
+  </section>
+
+</div>
+<script src="app.js"></script>
+</body>
+</html>

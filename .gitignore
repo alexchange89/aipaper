@@ -1,0 +1,4 @@
+# nulla di sensibile in questo repo (app statica)
+*.log
+.DS_Store
+Thumbs.db
